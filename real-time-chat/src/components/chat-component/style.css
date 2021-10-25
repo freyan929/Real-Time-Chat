@@ -1,0 +1,88 @@
+.parent-container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+}
+
+.chat-container {
+    background: #d0e1f3;
+
+    display: flex;
+
+    flex: 1;
+    flex-direction: column;
+}
+
+.chat-header {
+    background: #0c5494;
+}
+
+.chat-header > h2 {
+    margin: 0;
+    padding: 0.5rem;
+
+    color: white;
+}
+
+.chat-messages-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.chat-message-container {
+    display: flex;
+    flex-direction: row;
+
+    border-bottom: 1px solid black;
+}
+
+.chat-message-container > p {
+    margin: 0;
+    padding: 0.5rem;
+}
+
+.username {
+    flex-grow: 1;
+}
+
+.line-with-text-container {
+    padding: 1rem;
+}
+
+.line-with-text {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 20px 0 20px;
+}
+
+.line-with-text > span {
+    background: #d0e1f3;
+    padding:0 10px;
+}
+
+.input-container {
+    display: flex;
+}
+
+.input-container > input  {
+    flex-grow: 1;
+    font-size: 1.5rem;
+}
+
+.input-container > button {
+    background: #cccccc;
+    border: 0;
+}
+
+.input-container > button:hover {
+    background: #b7b7b7;
+    cursor: pointer;
+}
+
+.input-container > button:active {
+    background: #9d9d9d;
+}
