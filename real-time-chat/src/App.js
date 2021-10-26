@@ -4,7 +4,7 @@ import "./components/NavBar/style.css";
 
 import ChatComponent from "./components/chat-component";
 import Home from "./components/Home";
-import PageA from './components/PageA';
+import PageHome from './components/PageHome';
 import PageB from './components/PageB';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
@@ -33,8 +33,8 @@ function App() {
         </div>
       </div>
       <Switch>
-        <Route path="/a">
-          <PageA />
+        <Route path="/page-home">
+          <PageHome />
         </Route>
         <Route path="/b">
           <PageB />
