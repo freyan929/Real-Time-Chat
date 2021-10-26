@@ -6,7 +6,7 @@
 }
 
 .chat-container {
-    background: #d0e1f3;
+    background: #9bbbde;
 
     display: flex;
 
@@ -60,7 +60,7 @@
 }
 
 .line-with-text > span {
-    background: #d0e1f3;
+    background: #9bbbde;
     padding:0 10px;
 }
 

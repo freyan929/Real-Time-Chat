@@ -17,10 +17,34 @@ code {
   overflow: hidden;
 }
 
-.topnav li {
-  color: #f2f2f2;
+.topnav ul li {
   text-align: center;
-  padding: 1rem, 1rem;
-  text-decoration: none;
+  display: inline;
+  flex: 1;
+
   font-size: 1rem;
+  list-style-type: none;
+}
+
+.topnav li:hover {
+  background-color:#9bbbde;
+}
+
+ul li a:active {
+  background-color: #a5421b83;
+}
+
+ul {
+  margin: 0;
+  padding: 0rem;
+  display: flex;
+}
+
+.topnav ul a{
+  color: white;
+  text-decoration: none;
+}
+
+.navlink {
+  padding: 1rem;
 }

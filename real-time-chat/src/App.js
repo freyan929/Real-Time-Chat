@@ -16,16 +16,16 @@ function App() {
         <div className="topnav">
           <nav>
             <ul>
-              <li>
+              <li className="navlink">
                 <Link to="/">Home</Link>
               </li>
-              <li>
+              <li className="navlink">
                 <Link to="/chat-component">Chat Component</Link>
               </li>
-              <li>
+              <li className="navlink">
                 <Link to="/a">Page A</Link>
               </li>
-              <li>
+              <li className="navlink">
                 <Link to="/b">Page B</Link>
               </li>
             </ul>

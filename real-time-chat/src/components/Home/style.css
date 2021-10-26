@@ -37,14 +37,15 @@
 .button {
     margin-top: 6rem;
     margin-right: 0.2rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem rgb(85, 136, 168);
 }
 
 .button:hover {
     background-color: rgb(212, 222, 231);
-    box-shadow: 0.2rem 0.2rem 0.2rem rgb(85, 136, 168);
 }
 
 .search {
     margin-top: 6rem;
     position: relative;
+    box-shadow: 0.2rem 0.2rem 0.2rem rgb(85, 136, 168);
 }
