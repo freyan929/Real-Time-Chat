@@ -4,7 +4,6 @@ import ChatComponent from "./components/chat-component";
 
 import PageA from './components/PageA';
 import PageB from './components/PageB';
-import PageHome from './components/PageHome';
 
 import { BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
@@ -16,7 +15,7 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/home">Page Home</Link>
+              <Link to="/home">Home</Link>
             </li>
             <li>
               <Link to="/chat-component">Chat Component</Link>
