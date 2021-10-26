@@ -1,0 +1,50 @@
+.landing-container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+}
+
+.welcome-container {
+    background-color: #9bbbde;
+
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-header {
+    background: #9bbbde;
+    position: absolute;
+}
+
+.welcome-header > h1 {
+    padding-left: 0.8rem;
+    margin: 0;
+    color: white;
+}
+
+.welcome-header > h3 {
+    margin: 0;
+    color: white;
+}
+
+.buttons {
+    position: relative;
+}
+
+.button {
+    margin-top: 6rem;
+    margin-right: 0.2rem;
+}
+
+.button:hover {
+    background-color: rgb(212, 222, 231);
+    box-shadow: 0.2rem 0.2rem 0.2rem rgb(85, 136, 168);
+}
+
+.search {
+    margin-top: 6rem;
+    position: relative;
+}
