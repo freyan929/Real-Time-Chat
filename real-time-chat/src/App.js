@@ -17,13 +17,13 @@ function App() {
           <nav>
             <ul>
               <li className="navlink">
-                <Link to="/">Home</Link>
+                <Link to="/">PageHome</Link>
+              </li>
+              <li className="navlink">
+                <Link to="/home">Home</Link>
               </li>
               <li className="navlink">
                 <Link to="/chat-component">Chat Component</Link>
-              </li>
-              <li className="navlink">
-                <Link to="/a">Page A</Link>
               </li>
               <li className="navlink">
                 <Link to="/b">Page B</Link>
@@ -33,8 +33,10 @@ function App() {
         </div>
       </div>
       <Switch>
-        <Route path="/page-home">
-          <PageHome />
+        <Route path="/home">
+          <div className="landing-container">
+            <Home />
+          </div> 
         </Route>
         <Route path="/b">
           <PageB />
@@ -45,8 +47,8 @@ function App() {
           </div>
         </Route>
         <Route path="/">
-          <div className="landing-container">
-            <Home />
+          <div>
+            <PageHome />
           </div> 
         </Route>
       </Switch>
