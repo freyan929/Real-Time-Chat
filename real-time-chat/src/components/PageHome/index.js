@@ -15,7 +15,9 @@ const PageHome = () => {
             </div>
 
             <div className='start-container'>
-                <button><strong>{'Start'}</strong></button>
+                <form action="/home">
+                    <button><strong>{'Start'}</strong></button>
+                </form>
             </div>
         </div>
     );
