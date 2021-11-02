@@ -1,12 +1,12 @@
 .home-container {
     width: 100vw;
     height: 100vh;
-    background: rgb(85, 136, 168);
+    background: #9bbbde;
     display: flex;
 }
 
 .home-header1 {
-    background: rgb(85, 136, 168);
+    background: #9bbbde;
 
     display: flex;
     flex-direction: row;
@@ -22,7 +22,7 @@
 }
 
 .home-header2 {
-    background: rgb(85, 136, 168);
+    background: #9bbbde;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
     padding-top: 4rem;
@@ -50,7 +50,7 @@
 }
 
 .home-header3 {
-    background: rgb(85, 136, 168);
+    background: #9bbbde;
 
     display: flex;
     flex-direction: row;

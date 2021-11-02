@@ -1,7 +1,7 @@
 .parent-container {
   width: 100vw;
   height: 100vh;
-  display: flexbox;
+  display: flex;
   background-color: #9bbbde;
 }
 
@@ -36,7 +36,7 @@
 
   .searchbar {
     flex: 1;
-
+    flex-direction: row-reverse;
     margin-top: 0.9rem;
     margin-right: 0rem;
     box-shadow: 0.2rem 0.2rem 0.2rem rgb(85, 136, 168);
