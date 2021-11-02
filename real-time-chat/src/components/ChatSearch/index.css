@@ -1,0 +1,43 @@
+.parent-container {
+  width: 100vw;
+  height: 100vh;
+  display: flexbox;
+  background-color: #9bbbde;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container1 {
+    position: relative;
+    text-align: center;
+    color: white;
+
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .searchbar {
+    flex: 1;
+
+    margin-top: 0.9rem;
+    margin-right: 0rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem rgb(85, 136, 168);
+}

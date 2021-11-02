@@ -1,11 +1,10 @@
 import './App.css';
 import "./components/chat-component/style.css";
-import "./components/NavBar/style.css";
 
 import ChatComponent from "./components/chat-component";
 import Home from "./components/Home";
 import PageHome from './components/PageHome';
-import PageB from './components/PageB';
+import ChatSearch from './components/ChatSearch';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
@@ -26,7 +25,7 @@ function App() {
                 <Link to="/chat-component">Chat Component</Link>
               </li>
               <li className="navlink">
-                <Link to="/b">Page B</Link>
+                <Link to="/chat-search">Chat Search</Link>
               </li>
             </ul>
           </nav>
@@ -38,8 +37,8 @@ function App() {
             <Home />
           </div> 
         </Route>
-        <Route path="/b">
-          <PageB />
+        <Route path="/chat-search">
+          <ChatSearch />
         </Route>
         <Route path="/chat-component">
           <div className="parent-container">
