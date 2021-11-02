@@ -1,7 +1,8 @@
-const ChatRoom = (function() {
+import "./chatroom.css";
+
+const ChatRoom = () => {
     const myName = "blue";
  
-    
     function ChatRoom() {
         
         $(document).on('keydown', 'div.input-div textarea', function(e){
