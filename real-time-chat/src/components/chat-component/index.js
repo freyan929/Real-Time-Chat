@@ -11,8 +11,16 @@ const ChatComponent = (props) => {
     useEffect(() => {
         const newSocket = io(`http://localhost:8080/`);
         setSocket(newSocket);
+
+        newSocket.on( 'message_sent', (data) => {
+            console.log('received message', data);
+            
+            messages.push(data);
+            setMessages([...messages]);
+        });
+
         return () => newSocket.close();
-    }, [setSocket]);
+    }, [setSocket, messages]);
 
     return (
         <div className='chat-container'>
@@ -28,7 +36,7 @@ const ChatComponent = (props) => {
                 {
                     messages.map((message:{...}, index: number) => {
                         return(
-                            <ChatMessageComponent key={index} name={message.name} message={message.msg} time={message.time}></ChatMessageComponent>
+                            <ChatMessageComponent key={message.name + index} name={message.name} message={message.msg} time={message.time}></ChatMessageComponent>
                         );
                     })
                 }
@@ -40,11 +48,20 @@ const ChatComponent = (props) => {
 
             <form className='input-container' onSubmit={(e) => {
                 e.preventDefault();
-                console.log(chatMsg);
+
+                const data = {
+                    name: socket.id,
+                    msg: chatMsg,
+                    time: new Date()
+                };
+
+                setChatMsg('');
+
+                socket.emit('message_sent', data);
             }}>
-                <input placeholder={'Type a new message...'} value={chatMsg} onChange={(e)=>(
-                    setChatMsg(e.target.value)
-                )}></input>
+                <input placeholder={'Type a new message...'} value={chatMsg} onChange={(e)=>{
+                    setChatMsg(e.target.value);
+                }}></input>
                 <button><strong>{'>>'}</strong></button>
             </form>
         </div>

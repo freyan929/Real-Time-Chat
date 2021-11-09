@@ -1,4 +1,4 @@
-const cors = require('cors');
+const cors = require('cors')
 const app = require('express')();
 
 app.use(cors({
@@ -19,10 +19,15 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-    console.log('someone connected');
+    console.log(`${socket.id} connected`);
 
-    io.on('disconnect', () => {
-        console.log('someone disconnected');
+    socket.on('message_sent', messages => {
+        console.log(`sending message from ${socket.id}`);
+        io.emit('message_sent', messages);
+    });
+
+    socket.on('disconnect', () => {
+        console.log(`${socket.id} disconnected`);
     });
 });
 
