@@ -42,7 +42,7 @@ function App() {
         </Route>
         <Route path="/chat-component">
           <div className="parent-container">
-            <ChatComponent />
+            <ChatComponent chatname={'Chat A'}/>
           </div>
         </Route>
         <Route path="/">
