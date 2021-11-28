@@ -34,7 +34,7 @@ const ChatComponent = (props) => {
                 }
 
                 {
-                    messages.map((message:{...}, index: number) => {
+                    messages.map((message: string, index: number) => {
                         return(
                             <ChatMessageComponent key={message.name + index} name={message.name} message={message.msg} time={message.time}></ChatMessageComponent>
                         );
@@ -71,8 +71,8 @@ const ChatComponent = (props) => {
 const ChatMessageComponent = (props) => {
     return (
         <div className='chat-message-container'>
-            <p><strong>{`${props.name} | ${props.message}`}</strong></p>
-            <p className='float-right'>{`${props.time}`}</p>
+            <p style={{flexGrow:1}}><strong>{`${props.name} | ${props.message}`}</strong></p>
+            <p>{`${props.time}`}</p>
         </div>
     );
 }

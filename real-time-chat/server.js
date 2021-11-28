@@ -34,3 +34,20 @@ io.on('connection', (socket) => {
 http.listen(port, () => {
     console.log(`server running at http://localhost:${port}/`);
 });
+
+// create express variable and modify existing app variable
+const express = require('express');
+
+// import to get system path
+const path = require('path');
+
+// localhost
+const host = '0.0.0.0';
+
+// serve compiled html, css, and js as a result of running "npm run build" or "yarn build"
+app.use(express.static(path.join(__dirname, 'build')));
+
+// show react website if user visits "/" page
+app.get('*', function(req, res) {
+    res.sendFile('index.html', {root: path.join(__dirname, 'build')});
+});
