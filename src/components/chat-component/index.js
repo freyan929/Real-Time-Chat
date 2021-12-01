@@ -3,9 +3,14 @@ import './style.css';
 
 import io from 'socket.io-client';
 
+var date = new Date();
+var s = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
+
 const ChatComponent = (props) => {
     const [messages, setMessages] = useState([]);
     const [chatMsg, setChatMsg] = useState('');
+    const [userName, setUserName] = useState('');
+    const [initial, setInitial] = useState('');
     const [socket, setSocket] = useState(null);
 
     useEffect(() => {
@@ -34,15 +39,15 @@ const ChatComponent = (props) => {
                 }
 
                 {
-                    messages.map((message: string, index: number) => {
+                    messages.map((message: string, userName: string, index: number) => {
                         return(
-                            <ChatMessageComponent key={message.name + index} name={message.name} message={message.msg} time={message.time}></ChatMessageComponent>
+                            <ChatMessageComponent key={message.userName + index} name={message.name} message={message.msg} time={message.time}></ChatMessageComponent>
                         );
                     })
                 }
 
                 <div className='line-with-text-container'>
-                    <p className='line-with-text'><span>Oct 4, 2021</span></p>
+                    <p className='line-with-text'><span>{s}</span></p>
                 </div>
             </div>
 
@@ -50,15 +55,17 @@ const ChatComponent = (props) => {
                 e.preventDefault();
 
                 const data = {
-                    name: socket.id,
+                    name: userName,
                     msg: chatMsg,
-                    time: new Date()
                 };
 
                 setChatMsg('');
 
                 socket.emit('message_sent', data);
             }}>
+                <input placeholder={'Type your username...'} value={userName} onChange={(e)=>{
+                    setUserName(e.target.value);
+                }}></input>
                 <input placeholder={'Type a new message...'} value={chatMsg} onChange={(e)=>{
                     setChatMsg(e.target.value);
                 }}></input>
