@@ -40,9 +40,9 @@ const ChatComponent = (props) => {
                 }
 
                 {
-                    messages.map((message: string, userName: string, index: number) => {
+                    messages.map((message: string, name: string, index: number) => {
                         return(
-                            <ChatMessageComponent key={message.userName + index} name={message.name} message={message.msg} time={message.time}></ChatMessageComponent>
+                            <ChatMessageComponent key={message.msg + index} name={message.name} message={message.msg} time={message.time}></ChatMessageComponent>
                         );
                     })
                 }
@@ -58,8 +58,7 @@ const ChatComponent = (props) => {
                 const data = {
                     name: userName,
                     msg: chatMsg,
-                    time: new Date(),
-                    initial: true
+                    time: new Date()
                 };
 
                 setChatMsg('');
