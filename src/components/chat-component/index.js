@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './style.css';
 
 import io from 'socket.io-client';
+import { render } from '@testing-library/react';
 
 var date = new Date();
 var s = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
@@ -57,14 +58,18 @@ const ChatComponent = (props) => {
                 const data = {
                     name: userName,
                     msg: chatMsg,
+                    time: new Date(),
+                    initial: true
                 };
 
                 setChatMsg('');
 
                 socket.emit('message_sent', data);
-            }}>
+                }}> 
+
                 <input placeholder={'Type your username...'} value={userName} onChange={(e)=>{
                     setUserName(e.target.value);
+                    setInitial(false);
                 }}></input>
                 <input placeholder={'Type a new message...'} value={chatMsg} onChange={(e)=>{
                     setChatMsg(e.target.value);
