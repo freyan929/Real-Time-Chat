@@ -14,9 +14,9 @@ const io = require('socket.io')(http, {
 
 const port = process.env.PORT || 8080;
 
-app.get('/', (req, res) => {
-    res.send('<h1>Hello world</h1>');
-});
+//app.get('/', (req, res) => {
+    ///res.send({PageHome});
+//});
 
 io.on('connection', (socket) => {
     console.log(`${socket.id} connected`);

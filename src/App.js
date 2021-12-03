@@ -3,8 +3,8 @@ import "./components/chat-component/style.css";
 
 import ChatComponent from "./components/chat-component";
 import Home from "./components/Home";
-import PageHome from './components/PageHome';
 import ChatSearch from './components/ChatSearch';
+import PageHome from './components/PageHome';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
@@ -32,11 +32,6 @@ function App() {
         </div>
       </div>
       <Switch>
-        <Route path="/home">
-          <div className="landing-container">
-            <Home />
-          </div> 
-        </Route>
         <Route path="/chat-search">
           <ChatSearch />
         </Route>
@@ -45,8 +40,13 @@ function App() {
             <ChatComponent chatname={'Chat A'}/>
           </div>
         </Route>
+        <Route path="/home">
+          <div className="landing-container">
+            <Home />
+          </div> 
+        </Route>
         <Route path="/">
-          <div>
+          <div className="landing-container">
             <PageHome />
           </div> 
         </Route>

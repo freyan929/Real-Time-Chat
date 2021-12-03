@@ -11,7 +11,7 @@ const ChatComponent = (props) => {
     const [messages, setMessages] = useState([]);
     const [chatMsg, setChatMsg] = useState('');
     const [userName, setUserName] = useState('');
-    const [initial, setInitial] = useState('');
+    const [showUser, setShowUser] = useState('');
     const [socket, setSocket] = useState(null);
 
     useEffect(() => {
@@ -54,6 +54,7 @@ const ChatComponent = (props) => {
 
             <form className='input-container' onSubmit={(e) => {
                 e.preventDefault();
+                setShowUser(true);
 
                 const data = {
                     name: userName,
@@ -64,15 +65,20 @@ const ChatComponent = (props) => {
                 setChatMsg('');
 
                 socket.emit('message_sent', data);
-                }}> 
+                }}>
 
-                <input placeholder={'Type your username...'} value={userName} onChange={(e)=>{
-                    setUserName(e.target.value);
-                    setInitial(false);
-                }}></input>
-                <input placeholder={'Type a new message...'} value={chatMsg} onChange={(e)=>{
-                    setChatMsg(e.target.value);
-                }}></input>
+                { 
+                    (!showUser) &&
+                        <input placeholder={'Type your username...'} value={userName} onChange={(e)=>{
+                            setUserName(e.target.value);
+                        }}></input>
+                } 
+                {
+                    (showUser) && (userName != ' ') &&
+                        <input placeholder={'Type a new message...'} value={chatMsg} onChange={(e)=>{
+                            setChatMsg(e.target.value);
+                    }}></input>
+                }
                 <button><strong>{'>>'}</strong></button>
             </form>
         </div>
