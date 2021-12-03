@@ -69,10 +69,12 @@ const ChatComponent = (props) => {
 
                 { 
                     (!showUser) &&
-                        <input placeholder={'Type your username...'} value={userName} onChange={(e)=>{
-                            setUserName(e.target.value);
-                        }}></input>
-                } 
+                    <input placeholder={'Type your username...'} value={userName} onChange={e => {
+                        setUserName(e.target.value);
+                        setChatMsg('has joined the server')
+                    }}></input>
+                }
+
                 {
                     (showUser) && (userName != ' ') &&
                         <input placeholder={'Type a new message...'} value={chatMsg} onChange={(e)=>{
