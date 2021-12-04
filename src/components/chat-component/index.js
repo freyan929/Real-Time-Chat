@@ -15,7 +15,7 @@ const ChatComponent = (props) => {
     const [socket, setSocket] = useState(null);
 
     useEffect(() => {
-        const newSocket = io(`http://localhost:8080/`);
+        const newSocket = io(`http://localhost:${port}/`);
         setSocket(newSocket);
 
         newSocket.on( 'message_sent', (data) => {
@@ -42,7 +42,7 @@ const ChatComponent = (props) => {
                 {
                     messages.map((message: string, name: string, index: number) => {
                         return(
-                            <ChatMessageComponent key={message.msg + index} name={message.name} message={message.msg} time={message.time}></ChatMessageComponent>
+                            <ChatMessageComponent key={message.msg + message.name + index} name={message.name} message={message.msg} time={message.time}></ChatMessageComponent>
                         );
                     })
                 }
@@ -70,9 +70,7 @@ const ChatComponent = (props) => {
                 { 
                     (!showUser) &&
                     <input placeholder={'Type your username...'} value={userName} onChange={e => {
-                        setUserName(e.target.value);
-                        setChatMsg('has joined the server')
-                    }}></input>
+                        setUserName(e.target.value); setChatMsg('has joined the server')}}></input>
                 }
 
                 {
