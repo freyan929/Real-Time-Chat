@@ -15,7 +15,7 @@ const ChatComponent = (props) => {
     const [socket, setSocket] = useState(null);
 
     useEffect(() => {
-        const newSocket = io(`http://localhost:${port}/`);
+        const newSocket = io(`http://localhost:8080/`);
         setSocket(newSocket);
 
         newSocket.on( 'message_sent', (data) => {
