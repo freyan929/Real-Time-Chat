@@ -15,12 +15,12 @@ const ChatComponent = (props) => {
     const [socket, setSocket] = useState(null);
 
     useEffect(() => {
-        const newSocket = io(`http://localhost:8080/`);
+        const newSocket = io(`http://rltmct.herokuapp.com/`);
         setSocket(newSocket);
 
         newSocket.on( 'message_sent', (data) => {
             console.log('received message', data);
-            
+
             messages.push(data);
             setMessages([...messages]);
         });
@@ -40,7 +40,7 @@ const ChatComponent = (props) => {
                 }
 
                 {
-                    messages.map((message: string, name: string, index: number) => {
+                    messages.map((message, name, index) => {
                         return(
                             <ChatMessageComponent key={message.msg + message.name + index} name={message.name} message={message.msg} time={message.time}></ChatMessageComponent>
                         );
@@ -67,7 +67,7 @@ const ChatComponent = (props) => {
                 socket.emit('message_sent', data);
                 }}>
 
-                { 
+                {
                     (!showUser) &&
                     <input placeholder={'Type your username...'} value={userName} onChange={e => {
                         setUserName(e.target.value); setChatMsg('has joined the server')}}></input>
